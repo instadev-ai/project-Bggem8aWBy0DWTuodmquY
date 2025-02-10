@@ -1,4 +1,3 @@
-import { HeroSection } from '../components/sections/hero-section';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 
@@ -6,28 +5,67 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <HeroSection />
+      <section className="w-full min-h-[90vh] flex items-center justify-center bg-background">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center space-y-8 text-center">
+            <p className="text-sm font-medium text-primary">
+              INTRODUCING OUR PLATFORM
+            </p>
+            
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none max-w-3xl">
+              Transform Your Workflow with
+              <span className="bg-gradient-to-r from-primary to-primary/50 text-transparent bg-clip-text"> AI-Powered</span> Solutions
+            </h1>
+            
+            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+              Streamline your processes, boost productivity, and achieve more with our innovative SaaS platform. Experience the future of work today.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 min-[400px]:gap-6">
+              <Button size="lg" className="text-lg px-8">
+                Start Free Trial
+              </Button>
+              <Button variant="outline" size="lg" className="text-lg px-8">
+                Watch Demo
+              </Button>
+            </div>
+            
+            <div className="flex flex-col items-center space-y-4 mt-8">
+              <p className="text-sm text-muted-foreground">
+                Trusted by leading companies worldwide
+              </p>
+              <div className="flex flex-wrap justify-center gap-8 opacity-70">
+                {/* Replace with actual company logos */}
+                <div className="h-8 w-24 bg-muted rounded"></div>
+                <div className="h-8 w-24 bg-muted rounded"></div>
+                <div className="h-8 w-24 bg-muted rounded"></div>
+                <div className="h-8 w-24 bg-muted rounded"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-20 bg-muted/50">
         <div className="container px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
               Everything you need to scale
             </h2>
-            <p className="mt-4 text-gray-500 dark:text-gray-400 md:text-xl">
+            <p className="mt-4 text-muted-foreground md:text-xl">
               Powerful features to help your business grow
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="p-6">
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+              <Card key={index} className="p-6 bg-background/50 backdrop-blur-sm">
+                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 text-2xl">
                   {feature.icon}
                 </div>
                 <h3 className="font-semibold text-xl mb-2">{feature.title}</h3>
-                <p className="text-gray-500 dark:text-gray-400">{feature.description}</p>
+                <p className="text-muted-foreground">{feature.description}</p>
               </Card>
             ))}
           </div>
@@ -55,20 +93,20 @@ const Index = () => {
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
               Loved by businesses worldwide
             </h2>
-            <p className="mt-4 text-gray-500 dark:text-gray-400 md:text-xl">
+            <p className="mt-4 text-muted-foreground md:text-xl">
               See what our customers have to say
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="p-6">
-                <p className="text-gray-500 dark:text-gray-400 mb-4">"{testimonial.quote}"</p>
+              <Card key={index} className="p-6 bg-background/50 backdrop-blur-sm">
+                <p className="text-muted-foreground mb-4">"{testimonial.quote}"</p>
                 <div className="flex items-center">
-                  <div className="h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-800 mr-3" />
+                  <div className="h-10 w-10 rounded-full bg-muted mr-3" />
                   <div>
                     <div className="font-semibold">{testimonial.author}</div>
-                    <div className="text-sm text-gray-500 dark:text-gray-400">{testimonial.role}</div>
+                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
                   </div>
                 </div>
               </Card>
@@ -78,13 +116,13 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-20 bg-muted/50">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl mb-6">
               Ready to transform your business?
             </h2>
-            <p className="text-gray-500 dark:text-gray-400 mb-8 md:text-xl">
+            <p className="text-muted-foreground mb-8 md:text-xl">
               Join thousands of companies already using our platform
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
